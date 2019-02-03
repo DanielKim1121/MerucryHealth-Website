@@ -1,0 +1,462 @@
+{% extends "./base.html" %}
+{% load static%}
+
+
+{% block navContent%}
+<header class="header">
+            <nav class="nav">
+                <div class="nav__tab">
+                    <div class="nav__logo" >
+                        Mercury Health
+                    </div>
+                    <div class="nav__navigation">
+                        {% if auth%}
+                        <span class="nav__login"><a href="/user_page" class="nav__login--link nav__link">my page</a></span>
+                        {% else %}
+                        <span class="nav__contact"><a href="#footer" class="nav__contact--link nav__link">contact us</a></span>
+                        <span class="nav__signup"><a href="#signup" class="nav__signup--link nav__link">signup</a></span>
+                        <span class="nav__login"><a href="#login" class="nav__login--link nav__link">login</a></span>
+                        {% endif %}
+                    </div>
+                </div>
+            </nav>
+          <div class="header__logo-box">
+          </div>
+          <div class="main-head">
+            <h1 class="main-head__content">
+                <span class="main-head__content--title margin-bottom-big">Live Life Without Worry</span>
+            </h1>
+          </div>
+        </header>
+{% endblock %}
+
+
+
+{% block content%}
+{% if errorMessage != None and cred == 'login'%}
+
+<script>
+    window.location.href="http://" + window.location.hostname + "/#login";
+
+//Another url redirect
+
+</script>
+{% endif %}
+
+{% if errorMessage != None and cred == 'signup'%}
+<script>
+    window.location.href="http://" + window.location.hostname+ "/#signup";
+
+//Another url redirect
+
+</script>
+{% endif %}
+{% if errorMessage == None %}
+<script>
+    window.location.href="http://" + window.location.hostname+ "/#";
+
+//Another url redirect
+
+</script>
+{% endif %}
+{% if errorMessage != None and cred == 'forgot-password'%}
+
+<script>
+    window.location.href="http://" + window.location.hostname + "/#forgot-password";
+
+//Another url redirect
+
+</script>
+{% endif %}
+{% if errorMessage != None and cred == 'reset_password'%}
+
+<script>
+    window.location.href="http://" + window.location.hostname + "/#reset-password";
+
+//Another url redirect
+
+</script>
+{% endif %}
+
+
+
+
+
+  <main>
+      <section class="features">
+
+        <div class="row">
+            <div class="center-text margin-bottom-8">
+            <h2 class="heading-secondary margin-bottom-medium">
+              How it Works
+            </h2>
+            </div>
+          <div class="colum-1-of-4">
+            <div class="feature-box">
+                <i class="feature-box__icon icon-basic-home"></i>
+              <p class="feature-box__text">Our team easily installs the Mercury device in a desired room </p>
+            </div>
+          </div>
+
+          <div class="colum-1-of-4">
+            <div class="feature-box">
+                <i class="feature-box__icon icon-basic-photo"></i>
+              <p class="feature-box__text">The Mercury device then begins to capture video of the room
+            </div>
+          </div>
+
+          <div class="colum-1-of-4">
+            <div class="feature-box">
+                <i class="feature-box__icon icon-basic-calculator"></i>
+              <p class="feature-box__text">It sends the video to our servers which anonymously analyzes the data to look for patterns in person's movement
+            </div>
+          </div>
+
+          <div class="colum-1-of-4">
+            <div class="feature-box">
+                <i class="feature-box__icon icon-basic-smartphone"></i>
+              <p class="feature-box__text">If we recognize a certain movement, such as a person falling, we send a notification to a predefined emergency contact or emergency services
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+
+
+    <section class="tours" id="tours">
+      <div class="center-text margin-bottom-big">
+          <h2 class="heading-secondary-1">
+            Our Device
+          </h2>
+      </div>
+
+      <div class="row">
+        <div class="colum-1-of-3">
+          <div class="card">
+            <div class="card__side card__side--front">
+              <div class="card__picture card__picture--1"></div>
+              <h4 class="card__heading">
+                <span class="card__heading--span card__heading--span--1">Non-Wearable</span>
+              </h4>
+            </div>
+            <div class="card__side card__side--back card__side--back--1">
+              <div class="card__back">
+                  <p> Unlike current technologies which use wearable technology (like the Apple Watch™ and Life Alert) to analyze person actions, our device does it entirely from a distance.</p>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="colum-1-of-3">
+          <div class="card">
+            <div class="card__side card__side--front">
+              <div class="card__picture card__picture--2"></div>
+              <h4 class="card__heading">
+                <span class="card__heading--span card__heading--span--2">Position Recognition</span>
+              </h4>
+            </div>
+            <div class="card__side card__side--back card__side--back--2">
+              <div class="card__back">
+                  <p>With a small, unintrusive camera our device can detect elderly falls and other human actions in real time. </p>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="colum-1-of-3">
+          <div class="card">
+            <div class="card__side card__side--front">
+              <div class="card__picture card__picture--3"></div>
+              <h4 class="card__heading">
+                <span class="card__heading--span card__heading--span--3">Emergency Alert</span>
+              </h4>
+            </div>
+            <div class="card__side card__side--back card__side--back--3">
+              <div class="card__back">
+                  <p> Have peace of mind while your loved one lives safely at home with the independence they desire. Receive a message instantly if anything is wrong.</p>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+
+    <section class="section-stories">
+      <div class="center-text margin-bottom-8">
+      <h2 class="heading-secondary margin-bottom-medium">
+        Our Team
+      </h2>
+      </div>
+      <div class="row story__row">
+
+          <div class="colum-1-of-4">
+
+            <div class="story story__colum">
+              <figure class="story__shape margin-bottom-small">
+                <img src="{%static 'img/brandonpeckphoto.jpg'%}"class="story__image">
+                <figureCaption class="story__caption">
+                    Brandon Peck
+                </figureCaption>
+              </figure>
+              <div class="story__text">
+                  <p>Brandon Peck - Fourth year Computer Science student at the University of Virginia. Has work and research experience with developing Machine Learning models and pipelines. </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="colum-1-of-4">
+
+            <div class="story story__colum">
+              <figure class="story__shape margin-bottom-small">
+                <img src="{%static 'img/Ji.png'%}"class="story__image">
+                <figureCaption class="story__caption">
+                    Ji Lee
+                </figureCaption>
+              </figure>
+              <div class="story__text">
+                  <p>Ji Lee - Fourth year nano engineering student at the UCSD. Has work and research experience in fabricating micro electronics with a passion in personalized health monitoring, especially in geriatrics. </p>
+              </div>                  </div>
+          </div>
+          <div class="colum-1-of-4">
+
+            <div class="story story__colum">
+              <figure class="story__shape margin-bottom-small">
+                <img src="{%static 'img/Ricky.PNG'%}"class="story__image">
+                <figureCaption class="story__caption">
+                    Rickey Rueda
+                </figureCaption>
+              </figure>
+              <div class="story__text">
+                  <p>Rickey Rueda - Fourth year BioEngineering student at the UCSD. I have research and development experience with biosensors for human health monitoring and I am passionate about empowering people to live healthier lives via personalized medical analytics. </p>
+              </div>                    </div>
+          </div>
+          <div class="colum-1-of-4">
+
+            <div class="story story__colum">
+              <figure class="story__shape margin-bottom-small">
+                <img src="{%static 'img/alex.JPG'%}"class="story__image">
+                <figureCaption class="story__caption">
+                    Alex Tam
+                </figureCaption>
+              </figure>
+              <div class="story__text">
+                  <p>Alex Tam - Bachelor's in Electrical Engineering at the UCSD. I have development experience with circuits and hardware with a passion to advance living conditions.</p>
+              </div>                  </div>
+          </div>
+      </div>
+      <div class="row story__row">
+
+
+          <div class="colum-1-of-4 ">
+
+            <div class="story story__colum">
+              <figure class="story__shape margin-bottom-small">
+                <img src="{%static 'img/gradient.jpg'%}"class="story__image">
+                <figureCaption class="story__caption">
+                Alistair Twombly
+                </figureCaption>
+              </figure>
+              <div class="story__text">
+                  <p>Alistair Twombly- Recently graduated from UCSD with a degree in Aerospace Engineering. I have experience with 3D modeling and mechanical optimization including building a human powered submarine. I am excited to help design the next generation of devices which will improve people’s lives. </p>
+              </div>                    </div>
+          </div>
+
+          <div class="colum-1-of-4 story__colum">
+
+            <div class="story story__colum">
+              <figure class="story__shape margin-bottom-small">
+                <img src="{%static 'img/DanielKim.jpg'%}"class="story__image">
+                <figureCaption class="story__caption">
+                 Daniel Kim
+                </figureCaption>
+              </figure>
+              <div class="story__text">
+                  <p> Fourth year UCSD studying Math-Computer Science. Full Stack Developer at Mercury Health</p>
+              </div>                    </div>
+          </div>
+
+
+
+      </div>
+
+
+    </section>
+
+  </main>
+
+  <footer class="footer" id="footer">
+      <div class="footer__logo--box">
+          <!--<img src="{%static 'img/logo-green-2x.png'%}" alt="logo" class="footer__logo">-->
+      </div>
+      <div class="row">
+              <div class="footer__copyright">
+                  <p>Contact Us</p>
+                  <a href="mailto:Admin@MercuryHealth.us">Admin@MercuryHealth.us</a>
+
+              </div>
+      </div>
+  </footer>
+  <div class="popup" id="login">
+      <div class="popup__box">
+          <a href="#" class="popup__close">&times;</a>
+          <div class="book">
+            <div class="book__form">
+                <div class="margin-bottom-medium form">
+                  <h2 class="heading-secondary">
+                    Login
+                  </h2>
+                </div>
+                <form action="/login/" class="form" method="post">
+
+                {% csrf_token %}
+                <div class="form__group form__text">
+                {% if errorMessage != None and cred == 'login'%}
+
+                {{ errorMessage }}
+                {% endif %}
+
+                </div>
+
+                <div class="form__group">
+                  <input type="email" name="email" class="form__input" placeholder="Email" id="email" required>
+                  <label for="email" class="form__label">Email</label>
+              </div>
+                  <div class="form__group">
+                    <input type="password" name = "password" class="form__input" placeholder="password" id="id_password" required>
+                    <label for="id_password" class="form__label">Password</label>
+                  </div>
+                  <div class="form__group form__forgot__group">
+                      <a href="#" class="form__forPassword"> forgot my password</a>
+                  </div>
+                  <div class="form__group">
+                      <input type="submit" class="btn--input btn btn--green" value="login"/>
+                  </div>
+              </form>
+            </div>
+          </div>
+      </div>
+  </div>
+  <div class="popup" id="forgot-password">
+      <div class="popup__box">
+          <a href="#" class="popup__close">&times;</a>
+          <div class="book">
+            <div class="book__form">
+                <div class="margin-bottom-medium form">
+                  <h2 class="heading-secondary">
+                    Forgot Password
+                  </h2>
+                </div>
+                <form action="/forgot_password/" class="form" method="post">
+                    {% csrf_token %}
+                    <div class="form__group form__text">
+                        {% if errorMessage != None and cred == 'forgot-password'%}
+
+                        {{ errorMessage }}
+                        {% endif %}
+                    </div>
+                  <div class="form__group">
+                    <input type="email" name="email" class="form__input" placeholder="your email" id="email2" required>
+                    <label for="email2" class="form__label">email</label>
+                  </div>
+                  <div class="form__group">
+                      <input type="submit" class="btn--input btn btn--green" value="Submit" />
+                  </div>
+              </form>
+            </div>
+          </div>
+      </div>
+  </div>
+  <div class="popup" id="reset-password">
+      <div class="popup__box">
+          <a href="#" class="popup__close">&times;</a>
+          <div class="book">
+            <div class="book__form">
+                <div class="margin-bottom-medium form">
+                  <h2 class="heading-secondary">
+                      reset-password
+                  </h2>
+                </div>
+
+                <form action="/reset_password/" class="form" method="post">
+                    {% csrf_token %}
+                    <div class="form__group form__text">
+                        {% if errorMessage != None and cred == 'reset_password'%}
+
+                        {{ errorMessage }}
+                        {% endif %}
+                    </div>
+                  <div class="form__group">
+                    <input type="email" name="email" class="form__input" placeholder="your email" id="email3" required>
+                    <label for="email3" class="form__label">Email</label>
+                  </div>
+                  <div class="form__group">
+                    <input type="text" name="confirmationCode" class="form__input" placeholder="confirmation code" id="concode" required>
+                    <label for="concode" class="form__label">Confirmation Code</label>
+                  </div>
+                  <div class="form__group">
+                    <input type="text" name="newPassword" class="form__input" placeholder="new password" id="newPassword" required>
+                    <label for="newPassword" class="form__label">New Password</label>
+                  </div>
+                  <div class="form__group">
+                      <input type="submit" class="btn--input btn btn--green" value="Submit" />
+                  </div>
+              </form>
+            </div>
+          </div>
+      </div>
+  </div>
+  <div class="popup" id="signup">
+      <div class="popup__box">
+          <a href="#" class="popup__close">&times;</a>
+          <div class="book">
+            <div class="book__form">
+                <div class="margin-bottom-medium form">
+                  <h2 class="heading-secondary">
+                    signup
+                  </h2>
+                </div>
+                <form action="/register/" class="form" method="post">
+                {% csrf_token %}
+                <div class="form__group form__text">
+                    {% if errorMessage != None and cred == 'signup'%}
+
+                    {{ errorMessage }}
+                    {% endif %}
+                </div>
+                <div class="form__group">
+                  <input type="text" name="device_id" class="form__input" placeholder="Device ID" id="DeviceID" required>
+                  <label for="DeviceID" class="form__label">DeviceID</label>
+                </div>
+                  <div class="form__group">
+                    <input type="text" name="name"class="form__input" placeholder="Your Name" id="name" required>
+                    <label for="name" class="form__label">Name</label>
+                  </div>
+                  <div class="form__group">
+                    <input type="email" name="email" class="form__input" placeholder="Email" id="email1" required>
+                    <label for="email1" class="form__label">Email</label>
+                  </div>
+                  <div class="form__group">
+                    <input type="password" name="password" class="form__input" placeholder="Password" id="Password" required>
+                    <label for="Password" class="form__label">Password</label>
+                  </div>
+
+                  <div class="form__group">
+                      <input type="submit" class="btn--input btn btn--green" value="signup"/>
+                  </div>
+              </form>
+            </div>
+          </div>
+      </div>
+  </div>
+
+
+{% endblock %}
